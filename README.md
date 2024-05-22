@@ -44,10 +44,14 @@ Recipes
     PUT /recipes/:id: Update a recipe by ID.
     DELETE /recipes/:id: Delete a recipe by ID.
 
-Ingredients
+## Screenshots
 
-    GET /ingredients: Get a list of all ingredients.
-    GET /ingredients/:id: Get a specific ingredient by ID.
-    POST /ingredients: Create a new ingredient.
-    PUT /ingredients/:id: Update an ingredient by ID.
-    DELETE /ingredients/:id: Delete an ingredient by ID.
+Here are some screenshots showcasing the functionality of the Food Recipe API:
+
+![alt text](image.png)
+
+## Contributing 
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request
+
+## License
+This project is licensed under the MIT License.
