@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --env-file=.env ./bin/www"
+    "start": "node --env-file=.env ./bin/www",
+    "dev": "nodemon --env-file=.env ./bin/www"
   },
   "author": "",
   "license": "ISC",
@@ -13,8 +14,10 @@
     "cloudinary": "^2.2.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.3",
+    "path": "^0.12.7",
     "pg": "^8.11.5",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.0"

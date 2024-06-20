@@ -23,6 +23,14 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+
+app.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+// app.get("/", (req, res) => {res.send })
+app.set('view engine', 'ejs'); // Replace 'ejs' with your chosen view engine
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -33,5 +41,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening to port: ${port}`))
 
 export default app;

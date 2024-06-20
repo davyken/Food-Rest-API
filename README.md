@@ -11,7 +11,7 @@ This is a backend API for a food recipe application. It provides endpoints for m
     Clone the repository:
     bash
 
-git clone https://github.com/davyken/food-recipe-api.git
+git clone https://github.com/davyken/food-rest-api.git
 cd food-rest-api
 
 ## Install the dependencies:
