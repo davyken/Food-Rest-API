@@ -3,7 +3,7 @@ import express from 'express';
 
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import indexRouter from './ingredients.js';
+import indexRouter from './routes/ingredients.js';
 import usersRouter from './routes/users.js';
 
 const app = express();
