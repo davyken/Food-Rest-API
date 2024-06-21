@@ -3,8 +3,7 @@ import express from 'express';
 
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import ingredientsRouter from './ingredients.js';
-import recipesRouter from './recipes.js';
+import indexRouter from './ingredients.js';
 import usersRouter from './routes/users.js';
 
 const app = express();
