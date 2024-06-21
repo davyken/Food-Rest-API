@@ -3,8 +3,7 @@ import express from 'express';
 
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-
-import indexRouter from './routes/index.js';
+import indexRouter from './routes/ingredients.js';
 import usersRouter from './routes/users.js';
 
 const app = express();
@@ -24,13 +23,6 @@ app.use(function(req, res, next) {
 });
 
 
-app.get('/', function(req, res) {
-  res.send('respond with a resource');
-});
-// app.get("/", (req, res) => {res.send })
-app.set('view engine', 'ejs'); // Replace 'ejs' with your chosen view engine
-
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -39,11 +31,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send({err: err.message});
 });
 
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening to port: ${port}`))
 
 export default app;
