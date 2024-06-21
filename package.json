@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --env-file=.env ./bin/www",
-    "dev": "nodemon --env-file=.env ./bin/www"
+    "start": "node  ./bin/www",
+    "dev": "nodemon  ./bin/www"
   },
   "author": "",
   "license": "ISC",
