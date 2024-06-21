@@ -3,7 +3,8 @@ import express from 'express';
 
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import indexRouter from './routes/ingredients.js';
+import ingredientsRouter from './ingredients.js';
+import recipesRouter from './recipes.js';
 import usersRouter from './routes/users.js';
 
 const app = express();
@@ -22,7 +23,9 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-
+app.get('/',(req, res)=>{
+res.send('Hello')
+})
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
