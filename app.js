@@ -4,35 +4,39 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import indexRouter from './routes/ingredients.js';
-import usersRouter from './routes/users.js';
+// import swagger from './swagger.yaml';
+
 
 const app = express();
 
-
-app.use(logger('dev'));
+app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use("/", indexRouter);
+
+// Initialize Swagger
+// swagger(app);
+
+// Root route handler
+app.get("/", (req, res) => {
+  res.send("Welcome to the Food Recipe API");
+});
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: err.message });
 });
-
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+app.use((err, req, res) => {
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
+  res.locals.error = req.app.get("env") === "development" ? err : {};
   res.status(err.status || 500);
-  res.send({err: err.message});
+  res.json({ error: err.message });
 });
 
-
 export default app;
+
