@@ -1,10 +1,9 @@
 import express from 'express';
-import recipesRouter from './recipes.js';
-import ingredientsRouter from './ingredients.js';
-
 const router = express.Router();
 
-router.use('/recipes', recipesRouter);
-router.use('/ingredients', ingredientsRouter);
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send({message: 'respond with a resource'});
+});
 
 export default router;

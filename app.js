@@ -3,8 +3,9 @@ import express from 'express';
 
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import indexRouter from './routes/ingredients.js';
-// import swagger from './swagger.yaml';
+import indexRouter from './routes/index.js';
+// import YAML from 'yamljs';
+// import swaggerUi from './swagger-Ui-express';
 
 
 const app = express();
@@ -21,7 +22,7 @@ app.use("/", indexRouter);
 
 // Root route handler
 app.get("/", (req, res) => {
-  res.send("Welcome to the Food Recipe API");
+  res.send("Welcome to Davy's Food Rest API");
 });
 
 // catch 404 and forward to error handler

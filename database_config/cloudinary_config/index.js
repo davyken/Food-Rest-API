@@ -41,4 +41,7 @@ const uploadImage = async (file) => {
   }
 };
 
-export { uploadImage };
+export default { 
+  uploadImage,
+  cloudinary
+ };
