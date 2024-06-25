@@ -7,7 +7,6 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
   try {
     const query = 'SELECT * FROM recipes';
-    // res.send('youu')
     const { rows: recipes } = await pool.query(query);
     return res.status(200).json(recipes);
   } catch (error) {
@@ -15,7 +14,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// Create a new ingredient
+// Create a new recipe
 router.post('/', async (req, res, next) => {
   try {
     const { name } = req.body;
@@ -31,7 +30,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-// Fetch a ingredient by ID
+// Fetch a recipes by ID
 router.get('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
