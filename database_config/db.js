@@ -20,6 +20,12 @@ if(err){
 }
 console.info("connected to database ")
 })
+pool.query(`CREATE TABLE IF NOT EXIST my_table (
+  ingredient_id,
+  ingredient_name,
+  quantity,
+  unit     
+  )`);
 
 pool.on("error", (error) => {
   console.log("error connecting to the database", error);
